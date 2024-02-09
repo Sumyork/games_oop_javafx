@@ -10,9 +10,11 @@ import static ru.job4j.chess.firuges.Cell.A3;
 import static ru.job4j.chess.firuges.Cell.B7;
 import static ru.job4j.chess.firuges.Cell.B8;
 import static ru.job4j.chess.firuges.Cell.C1;
+import static ru.job4j.chess.firuges.Cell.C3;
 import static ru.job4j.chess.firuges.Cell.C6;
 import static ru.job4j.chess.firuges.Cell.C7;
 import static ru.job4j.chess.firuges.Cell.D2;
+import static ru.job4j.chess.firuges.Cell.D4;
 import static ru.job4j.chess.firuges.Cell.D5;
 import static ru.job4j.chess.firuges.Cell.D6;
 import static ru.job4j.chess.firuges.Cell.E2;
@@ -58,6 +60,13 @@ class BishopBlackTest {
         BishopBlack bishopBlack = new BishopBlack(B7);
         Cell[] steps = new Cell[]{C6, D5, E4, F3, G2};
         assertThat(steps).isEqualTo(bishopBlack.way(G2));
+    }
+
+    @Test
+    void whenBishopBlackWayFromE5toC3() {
+        BishopBlack bishopBlack = new BishopBlack(E5);
+        Cell[] steps = new Cell[]{D4, C3};
+        assertThat(steps).isEqualTo(bishopBlack.way(C3));
     }
 
     @Test
